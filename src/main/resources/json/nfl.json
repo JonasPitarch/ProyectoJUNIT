@@ -1,0 +1,173 @@
+{
+  "AFC": {
+    "teams": [
+      {
+        "team": "Buffalo Bills",
+        "city": "Buffalo",
+        "img": ""
+      },
+      {
+        "team": "Miami Dolphins",
+        "city": "Miami",
+        "img": ""
+
+      },
+      {
+        "team": "New England Patriots",
+        "city": "Foxborough",
+        "img": ""
+      },
+      {
+        "team": "New York Jets",
+        "city": "East Rutherford",
+        "img": ""
+      },
+      {
+        "team": "Baltimore Ravens",
+        "city": "Baltimore",
+        "img": ""
+      },
+      {
+        "team": "Cincinnati Bengals",
+        "city": "Cincinnati",
+        "img": ""
+      },
+      {
+        "team": "Cleveland Browns",
+        "city": "Cleveland",
+        "img": ""
+      },
+      {
+        "team": "Pittsburgh Steelers",
+        "city": "Pittsburgh",
+        "img": ""
+      },
+      {
+        "team": "Houston Texans",
+        "city": "Houston",
+        "img": ""
+      },
+      {
+        "team": "Indianapolis Colts",
+        "city": "Indianapolis",
+        "img": ""
+      },
+      {
+        "team": "Jacksonville Jaguars",
+        "city": "Jacksonville",
+        "img": ""
+      },
+      {
+        "team": "Tennessee Titans",
+        "city": "Nashville",
+        "img": ""
+      },
+      {
+        "team": "Denver Broncos",
+        "city": "Denver",
+        "img": ""
+      },
+      {
+        "team": "Kansas City Chiefs",
+        "city": "Kansas City",
+        "img": ""
+      },
+      {
+        "team": "Las Vegas Raiders",
+        "city": "Las Vegas",
+        "img": ""
+      },
+      {
+        "team": "Los Angeles Chargers",
+        "city": "Los Angeles",
+        "img": ""
+      }
+    ]
+  },
+  "NFC": {
+    "teams": [
+      {
+        "team": "Dallas Cowboys",
+        "city": "Dallas",
+        "img": ""
+      },
+      {
+        "team": "New York Giants",
+        "city": "East Rutherford",
+        "img": ""
+      },
+      {
+        "team": "Philadelphia Eagles",
+        "city": "Philadelphia",
+        "img": ""
+      },
+      {
+        "team": "Washington Commanders",
+        "city": "Landover",
+        "img": ""
+      },
+      {
+        "team": "Chicago Bears",
+        "city": "Chicago",
+        "img": ""
+
+      },
+      {
+
+        "team": "Detroit Lions",
+        "city": "Detroit",
+        "img": ""
+      },
+      {
+        "team": "Green Bay Packers",
+        "city": "Green Bay",
+        "img": ""
+      },
+      {
+        "team": "Minnesota Vikings",
+        "city": "Minneapolis",
+        "img": ""
+      },
+      {
+        "team": "Atlanta Falcons",
+        "city": "Atlanta",
+        "img": ""
+      },
+      {
+        "team": "Carolina Panthers",
+        "city": "Charlotte",
+        "img": ""
+      },
+      {
+        "team": "New Orleans Saints",
+        "city": "New Orleans",
+        "img": ""
+      },
+      {
+        "team": "Tampa Bay Buccaneers",
+        "city": "Tampa",
+        "img": ""
+      },
+      {
+        "team": "Arizona Cardinals",
+        "city": "Glendale",
+        "img": ""
+      },
+      {
+        "team": "Los Angeles Rams",
+        "city": "Los Angeles",
+        "img": ""
+      },
+      {
+        "team": "San Francisco 49ers",
+        "city": "San Francisco",
+        "img": ""
+      },
+      {
+        "team": "Seattle Seahawks",
+        "city": "Seattle",
+        "img": ""
+      }
+    ]
+  }
+}
