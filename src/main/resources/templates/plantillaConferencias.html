@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Conferencias NFL</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/conference.css}">
+</head>
+<body>
+<h1>Conferencias NFL</h1>
+
+<!-- Verificar si las conferencias existen -->
+<th:block th:if="${afc != null && nfc != null}">
+  <!-- Mostrar equipos de la AFC -->
+  <h2>AFC</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Equipo</th>
+      <th>Ciudad</th>
+      <th>Logo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterar sobre los equipos de la AFC -->
+    <tr th:each="equipo : ${afc.teams}">
+      <td th:text="${equipo.team}">--</td>
+      <td th:text="${equipo.city}">--</td>
+      <td>
+        <img th:src="${equipo.img}" alt="Logo del equipo"/>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Mostrar equipos de la NFC -->
+  <h2>NFC</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Equipo</th>
+      <th>Ciudad</th>
+      <th>Logo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterar sobre los equipos de la NFC -->
+    <tr th:each="equipo : ${nfc.teams}">
+      <td th:text="${equipo.team}">--</td>
+      <td th:text="${equipo.city}">--</td>
+      <td>
+        <img th:src="${equipo.img}" alt="Logo del equipo"/>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</th:block>
+
+<!-- Mostrar un mensaje si las conferencias no existen o no tienen equipos -->
+<th:block th:unless="${afc != null && nfc != null}">
+  <p>No hay conferencias ni equipos disponibles para mostrar.</p>
+</th:block>
+
+</body>
+</html>
