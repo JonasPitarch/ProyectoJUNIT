@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Conferencias NFL</title>
-  <link rel="stylesheet" type="text/css" th:href="@{/css/conference.css}">
+  <link rel="stylesheet" type="text/css" href="CSS/Conferencias.css">
 </head>
 <body>
 <h1>Conferencias NFL</h1>
 
-<!-- Verificar si las conferencias existen -->
 <th:block th:if="${afc != null && nfc != null}">
-  <!-- Mostrar equipos de la AFC -->
   <h2>AFC</h2>
   <table>
     <thead>
@@ -32,7 +30,6 @@
     </tbody>
   </table>
 
-  <!-- Mostrar equipos de la NFC -->
   <h2>NFC</h2>
   <table>
     <thead>
@@ -43,7 +40,7 @@
     </tr>
     </thead>
     <tbody>
-    <!-- Iterar sobre los equipos de la NFC -->
+
     <tr th:each="equipo : ${nfc.teams}">
       <td th:text="${equipo.team}">--</td>
       <td th:text="${equipo.city}">--</td>
@@ -55,7 +52,6 @@
   </table>
 </th:block>
 
-<!-- Mostrar un mensaje si las conferencias no existen o no tienen equipos -->
 <th:block th:unless="${afc != null && nfc != null}">
   <p>No hay conferencias ni equipos disponibles para mostrar.</p>
 </th:block>

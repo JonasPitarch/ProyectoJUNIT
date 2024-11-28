@@ -2,15 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Detalles de las Ciudades</title>
-  <link rel="stylesheet" type="text/css" th:href="@{/css/ciutat.css}">
+  <title>Detalles de los equipos</title>
+  <link rel="stylesheet" type="text/css" th:href="CSS/ciutats.css">
 </head>
 <body>
-<h1>Detalles de las Ciudades</h1>
+<h1>Detalles de los Equipos</h1>
 
-<!-- Verificar que la lista de equipos no sea nula -->
 <th:block th:if="${equipos != null}">
-  <!-- Tabla para mostrar los detalles de los equipos -->
   <table>
     <thead>
     <tr>
@@ -20,7 +18,7 @@
     </tr>
     </thead>
     <tbody>
-    <!-- Iterar sobre la lista de equipos -->
+
     <tr th:each="equipo : ${equipos}">
       <td th:text="${equipo.team}">--</td>
       <td th:text="${equipo.city}">--</td>
@@ -32,10 +30,8 @@
   </table>
 </th:block>
 
-<!-- Mostrar un mensaje si la lista está vacía -->
 <th:block th:unless="${equipos != null}">
   <p>No hay equipos disponibles para mostrar.</p>
 </th:block>
-
 </body>
 </html>
