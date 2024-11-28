@@ -7,7 +7,6 @@
 </head>
 <body>
 <h1>Detalles de los Equipos</h1>
-
 <th:block th:if="${equipos != null}">
   <table>
     <thead>
@@ -18,7 +17,6 @@
     </tr>
     </thead>
     <tbody>
-
     <tr th:each="equipo : ${equipos}">
       <td th:text="${equipo.team}">--</td>
       <td th:text="${equipo.city}">--</td>
@@ -29,9 +27,8 @@
     </tbody>
   </table>
 </th:block>
-
 <th:block th:unless="${equipos != null}">
-  <p>No hay equipos disponibles para mostrar.</p>
+  <p>No hay equipos que se puedan mostrar en este momento.</p>
 </th:block>
 </body>
 </html>

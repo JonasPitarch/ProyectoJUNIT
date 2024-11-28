@@ -7,7 +7,6 @@
 </head>
 <body>
 <h1>Conferencias NFL</h1>
-
 <th:block th:if="${afc != null && nfc != null}">
   <h2>AFC</h2>
   <table>
@@ -19,7 +18,6 @@
     </tr>
     </thead>
     <tbody>
-    <!-- Iterar sobre los equipos de la AFC -->
     <tr th:each="equipo : ${afc.teams}">
       <td th:text="${equipo.team}">--</td>
       <td th:text="${equipo.city}">--</td>
@@ -40,7 +38,6 @@
     </tr>
     </thead>
     <tbody>
-
     <tr th:each="equipo : ${nfc.teams}">
       <td th:text="${equipo.team}">--</td>
       <td th:text="${equipo.city}">--</td>
@@ -51,10 +48,8 @@
     </tbody>
   </table>
 </th:block>
-
 <th:block th:unless="${afc != null && nfc != null}">
-  <p>No hay conferencias ni equipos disponibles para mostrar.</p>
+  <p>No hay nada que se pueda mostrar en este momento.</p>
 </th:block>
-
 </body>
 </html>

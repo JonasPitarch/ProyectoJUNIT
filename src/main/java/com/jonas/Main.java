@@ -17,6 +17,5 @@ public class Main {
         TemplateEngine templateEngine = new TemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
 
-
     }
 }
