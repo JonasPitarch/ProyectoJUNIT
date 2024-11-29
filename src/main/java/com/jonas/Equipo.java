@@ -1,11 +1,11 @@
 package com.jonas;
 
-public class Team {
-    public String team;
-    public String city;
-    public String img;
+public class Equipo {
+    private String team;
+    private String city;
+    private String img;
 
-    public Team(String team, String city, String img) {
+    public Equipo(String team, String city, String img) {
         this.team = team;
         this.city = city;
         this.img = img;

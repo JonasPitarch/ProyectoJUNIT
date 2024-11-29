@@ -3,13 +3,13 @@ package com.jonas;
 import java.util.List;
 
 public class Conference {
-    private List<Team> teams;
+    private List<Equipo> teams;
 
-    public Conference(List<Team> teams) {
+    public Conference(List<Equipo> teams) {
         this.teams = teams;
     }
 
-    public List<Team> getTeams() {
+    public List<Equipo> getTeams() {
         return teams;
     }
 }
