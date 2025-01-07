@@ -10,7 +10,6 @@
         "team": "Miami Dolphins",
         "city": "Miami",
         "img": "https://e7.pngegg.com/pngimages/982/491/png-clipart-miami-dolphins-logo-miami-dolphins-logo-sports-nfl-football.png"
-
       },
       {
         "team": "New England Patriots",
@@ -26,61 +25,6 @@
         "team": "Baltimore Ravens",
         "city": "Baltimore",
         "img": "https://e7.pngegg.com/pngimages/458/141/png-clipart-baltimore-ravens-logo-baltimore-ravens-solo-logo-sports-nfl-football.png"
-      },
-      {
-        "team": "Cincinnati Bengals",
-        "city": "Cincinnati",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Cincinnati_Bengals_logo.svg/2560px-Cincinnati_Bengals_logo.svg.png"
-      },
-      {
-        "team": "Cleveland Browns",
-        "city": "Cleveland",
-        "img": "https://wp.usatodaysports.com/wp-content/uploads/sites/90/2015/02/helmet_top_center1.png"
-      },
-      {
-        "team": "Pittsburgh Steelers",
-        "city": "Pittsburgh",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pittsburgh_Steelers_logo.svg/2048px-Pittsburgh_Steelers_logo.svg.png"
-      },
-      {
-        "team": "Houston Texans",
-        "city": "Houston",
-        "img": "https://logos-world.net/wp-content/uploads/2020/05/Houston-Texans-logo.png"
-      },
-      {
-        "team": "Indianapolis Colts",
-        "city": "Indianapolis",
-        "img": "https://logos-world.net/wp-content/uploads/2020/05/Indianapolis-Colts-Logo.png"
-      },
-      {
-        "team": "Jacksonville Jaguars",
-        "city": "Jacksonville",
-        "img": "https://e7.pngegg.com/pngimages/445/392/png-clipart-jacksonville-jaguars-logo-jacksonville-jaguars-nfl-tampa-bay-buccaneers-logo-cheetah-mammal-animals-thumbnail.png"
-      },
-      {
-        "team": "Tennessee Titans",
-        "city": "Nashville",
-        "img": "https://1000logos.net/wp-content/uploads/2018/07/Tennessee-Titans-Logo.png"
-      },
-      {
-        "team": "Denver Broncos",
-        "city": "Denver",
-        "img": "https://logos-world.net/wp-content/uploads/2020/05/Denver-Broncos-logo.png"
-      },
-      {
-        "team": "Kansas City Chiefs",
-        "city": "Kansas City",
-        "img": "https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2024/04/01/kansas-city-chiefs.jpeg"
-      },
-      {
-        "team": "Las Vegas Raiders",
-        "city": "Las Vegas",
-        "img": "https://cdn.inspireuplift.com/uploads/images/seller_products/1699530395_8-01.png"
-      },
-      {
-        "team": "Los Angeles Chargers",
-        "city": "Los Angeles",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Los_Angeles_Chargers_logo.svg/2560px-Los_Angeles_Chargers_logo.svg.png"
       }
     ]
   },
@@ -110,63 +54,6 @@
         "team": "Chicago Bears",
         "city": "Chicago",
         "img": "https://i.pinimg.com/736x/89/b2/03/89b2034542640a7163e19b10feae7d8c.jpg"
-
-      },
-      {
-
-        "team": "Detroit Lions",
-        "city": "Detroit",
-        "img": "https://i.pinimg.com/originals/ca/03/a5/ca03a5a1b7cad4487bdcb9562742c0ee.png"
-      },
-      {
-        "team": "Green Bay Packers",
-        "city": "Green Bay",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Green_Bay_Packers_logo.svg/1280px-Green_Bay_Packers_logo.svg.png"
-      },
-      {
-        "team": "Minnesota Vikings",
-        "city": "Minneapolis",
-        "img": "https://logos-world.net/wp-content/uploads/2020/05/Minnesota-Vikings-Logo.png"
-      },
-      {
-        "team": "Atlanta Falcons",
-        "city": "Atlanta",
-        "img": "https://logos-world.net/wp-content/uploads/2020/05/Atlanta-Falcons-logo.png"
-      },
-      {
-        "team": "Carolina Panthers",
-        "city": "Charlotte",
-        "img": "https://logos-world.net/wp-content/uploads/2020/05/Carolina-Panthers-logo.png"
-      },
-      {
-        "team": "New Orleans Saints",
-        "city": "New Orleans",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/New_Orleans_Saints_logo.svg/1200px-New_Orleans_Saints_logo.svg.png"
-      },
-      {
-        "team": "Tampa Bay Buccaneers",
-        "city": "Tampa",
-        "img": "https://logos-world.net/wp-content/uploads/2020/07/Tampa-Bay-Buccaneers-Logo.png"
-      },
-      {
-        "team": "Arizona Cardinals",
-        "city": "Glendale",
-        "img": "https://logos-world.net/wp-content/uploads/2020/05/Arizona-Cardinals-Logo.png"
-      },
-      {
-        "team": "Los Angeles Rams",
-        "city": "Los Angeles",
-        "img": "https://1000marcas.net/wp-content/uploads/2020/10/Los-Angeles-Rams-logo.png"
-      },
-      {
-        "team": "San Francisco 49ers",
-        "city": "San Francisco",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/San_Francisco_49ers_logo.svg/1280px-San_Francisco_49ers_logo.svg.png"
-      },
-      {
-        "team": "Seattle Seahawks",
-        "city": "Seattle",
-        "img": "https://i.pinimg.com/736x/45/48/d8/4548d8d1730bb10dc163d375cc953dfc.jpg"
       }
     ]
   }

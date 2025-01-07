@@ -1,6 +1,7 @@
 package com.jonas;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.thymeleaf.TemplateEngine;
@@ -9,94 +10,83 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
-        templateResolver.setPrefix("templates/");
-        templateResolver.setSuffix(".html");
-        templateResolver.setTemplateMode("HTML5");
-
-        TemplateEngine templateEngine = new TemplateEngine();
-        templateEngine.setTemplateResolver(templateResolver);
-
-        String jsonFilePath = "src/main/resources/json/nfl.json";
-
-        List<Equipo> equipos = cargarEquiposDesdeJSON(jsonFilePath);
+        TemplateEngine templateEngine = plantillaconf();
+        String mijson = "src/main/resources/json/nfl.json";
+        String salida = "src/main/resources/fitxersWEB";
+        List<Equipo> equipos = equiposJson(mijson);
         if (equipos.isEmpty()) {
-            System.err.println("No se cargaron equipos desde el JSON.");
+            System.out.println("No se encontraron equipos en el archivo JSON.");
             return;
         }
-
-        String outputDir = "src/main/resources/fitxersWEB";
-        crearDirectorio(outputDir);
+        crearCarpeta(salida);
         for (Equipo equipo : equipos) {
-            try {
-                Context context = new Context();
-                context.setVariable("equipo", equipo);
-
-                String htmlContent = templateEngine.process("plantilla1", context);
-
-                String fileName = outputDir + "/" + equipo.getTeam().replaceAll(" ", "_") + ".html";
-
-                escriuhtml(htmlContent, fileName);
-
-                System.out.println("Archivo generado: " + fileName);
-            } catch (Exception e) {
-                System.err.println("Error generando HTML para el equipo: " + equipo.getTeam());
-                e.printStackTrace();
-            }
+            generarHTML(equipo, templateEngine, salida);
         }
     }
 
-    public static void escriuhtml(String continguthtml, String nomFitxer) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomFitxer))) {
-            bw.write(continguthtml);
-        } catch (IOException e) {
-            System.err.println("Error escribiendo el archivo: " + nomFitxer);
-            e.printStackTrace();
-        }
+    public static TemplateEngine plantillaconf() {
+        ClassLoaderTemplateResolver resolver = new ClassLoaderTemplateResolver();
+        resolver.setPrefix("templates/");
+        resolver.setSuffix(".html");
+        resolver.setTemplateMode("HTML5");
+        TemplateEngine engine = new TemplateEngine();
+        engine.setTemplateResolver(resolver);
+        return engine;
     }
 
-    public static List<Equipo> cargarEquiposDesdeJSON(String filePath) {
+    public static List<Equipo> equiposJson(String rutaArchivo) {
         List<Equipo> equipos = new ArrayList<>();
-        try (Reader reader = new FileReader(filePath)) {
-
+        try (Reader reader = new FileReader(rutaArchivo)) {
             JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
             Gson gson = new Gson();
-
-
-            jsonObject.getAsJsonObject("AFC").getAsJsonArray("teams").forEach(teamJson ->
-                    equipos.add(gson.fromJson(teamJson, Equipo.class)));
-
-            jsonObject.getAsJsonObject("NFC").getAsJsonArray("teams").forEach(teamJson ->
-                    equipos.add(gson.fromJson(teamJson, Equipo.class)));
-
-            System.out.println("Equipos cargados correctamente: " + equipos.size());
-        } catch (FileNotFoundException e) {
-            System.err.println("Archivo JSON no encontrado: " + filePath);
-            e.printStackTrace();
-        } catch (IOException e) {
-            System.err.println("Error leyendo el archivo JSON: " + filePath);
-            e.printStackTrace();
+            agregarEquipos(jsonObject.getAsJsonObject("AFC").getAsJsonArray("teams"), equipos, gson);
+            agregarEquipos(jsonObject.getAsJsonObject("NFC").getAsJsonArray("teams"), equipos, gson);
+            System.out.println("Equipos cargados: " + equipos.size());
         } catch (Exception e) {
-            System.err.println("Error procesando el JSON: " + filePath);
+            System.out.println("Error leyendo el archivo JSON: " + rutaArchivo);
             e.printStackTrace();
         }
         return equipos;
     }
 
-    public static void crearDirectorio(String directorio) {
+    public static void agregarEquipos(JsonArray equipitos, List<Equipo> equipos, Gson gson) {
+        for (int i = 0; i < equipitos.size(); i++) {
+            JsonObject equip = equipitos.get(i).getAsJsonObject();
+            Equipo equipo = gson.fromJson(equip, Equipo.class);
+            equipos.add(equipo);
+        }
+    }
+
+    public static void crearCarpeta(String rutaCarpeta) {
         try {
-            Files.createDirectories(Paths.get(directorio));
-            System.out.println("Directorio creado/existente: " + directorio);
+            Files.createDirectories(Paths.get(rutaCarpeta));
+            System.out.println("Carpeta creada: " + rutaCarpeta);
         } catch (IOException e) {
-            System.err.println("Error creando el directorio: " + directorio);
+            System.out.println("Error creando la carpeta: " + rutaCarpeta);
             e.printStackTrace();
         }
     }
 
+    public static void generarHTML(Equipo equipo, TemplateEngine engine, String rutaSalida) {
+        Context context = new Context();
+        context.setVariable("equipo", equipo);
+
+        String html = engine.process("plantilla1", context);
+        String nombreArchivo = rutaSalida + "/" + equipo.getTeam().replace(" ", "_") + ".html";
+
+        try {
+            Files.writeString(Path.of(nombreArchivo), html);
+            System.out.println("Archivo HTML creado: " + nombreArchivo);
+        } catch (IOException e) {
+            System.err.println("No se pudo crear el archivo HTML: " + nombreArchivo);
+            //adada
+        }
+    }
 }
